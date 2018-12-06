@@ -19,7 +19,7 @@
 					<h1><strong>Hola, soy {{$user->full_name}}</strong><br> una super guerrera<br />
 					con muchas ganas de vivir.<br />
 					Apóyame! <br />
-					<h5><a href="/methods" class="button">Colabora aquí</a></h5></h1>
+					<h5><a href="/methods" class="btn btn-info">Colabora aquí</a></h5></h1>
 				</div>
 			</header>
 

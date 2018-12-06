@@ -21,12 +21,15 @@ Route::get('/transfer', 'viewController@transfer')->name('transfer');
 Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::middleware(['auth'])->group(function (){
-	//Mensajes
-	Route::resource('mensajes', 'MessageController');
-
+	
 	//Tareas
 	Route::resource('tareas', 'TodoController');
 });
+
+//Mensajes
+	Route::resource('mensajes', 'MessageController');
+//Mensajes
+Route::get('listamensajes', 'MessageController@lista');
 
 Route::get('instagram_maya', 'InstagramController@instagramMaya');
 

@@ -9,7 +9,7 @@
 			<h2>Modos de pago que puedes usar para ayudarme<br />
 			</header>
 			<p>Puedes ayudarme a través de paypal o transferencia bancaria</p>
-		<h5><a href="{{ URL::previous() }}" class="button">Volver</a></h5>
+		<h5><a href="{{ URL::previous() }}" class="btn btn-default">Volver</a></h5>
 			
 	</section>
 

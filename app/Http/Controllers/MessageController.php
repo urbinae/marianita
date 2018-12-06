@@ -35,7 +35,15 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = new Message();
+        $message->name = $request->input('name');
+        $message->email = $request->input('email');
+        $message->message = $request->input('message');
+        
+        if($message->save()){  
+            return $message;
+        }
+        return null;
     }
 
     /**

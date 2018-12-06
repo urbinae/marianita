@@ -53801,10 +53801,10 @@ var Messages = function (_Component) {
 
             axios.post('/mensajes/', message).then(function (resp) {
                 _this2.setState({ alert_message: "success" });
-                console.info(resp, _this2.state.alert_message);
+                console.info(resp);
             }).catch(function (error) {
                 _this2.setState({ alert_message: "error" });
-                console.info(error, _this2.state.alert_message);
+                console.info(error);
             });
         }
     }, {
@@ -53812,6 +53812,7 @@ var Messages = function (_Component) {
         value: function onChangeInput(event) {
             event.preventDefault();
             var target = event.target;
+            var value = target.type === 'checkbox' ? target.checked : target.value;
             var name = target.name;
             //console.info(name, value);
 
@@ -53831,35 +53832,42 @@ var Messages = function (_Component) {
                         { className: 'col-8 col-12-small' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'form',
-                            { method: 'post', action: '#' },
+                            { onSubmit: this.onSubmit },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'row gtr-uniform gtr-50' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
                                     { className: 'col-6 col-12-xsmall' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'name', id: 'name', placeholder: 'Nombre' })
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text',
+                                        key: 'name',
+                                        name: 'name',
+                                        value: this.state.name,
+                                        onChange: this.onChangeInput,
+                                        placeholder: 'Nombre' })
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
                                     { className: 'col-6 col-12-xsmall' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'email', name: 'email', id: 'email', placeholder: 'Correo' })
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'email',
+                                        key: 'email',
+                                        name: 'email',
+                                        value: this.state.email,
+                                        onChange: this.onChangeInput,
+                                        placeholder: 'Correo' })
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
                                     { className: 'col-12' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'message', id: 'message', placeholder: 'Mensaje', rows: '4' })
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+                                        key: 'message',
+                                        name: 'message',
+                                        value: this.state.message,
+                                        onChange: this.onChangeInput,
+                                        placeholder: 'Mensaje' })
                                 )
-                            )
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'ul',
-                            { className: 'actions' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                null,
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', value: 'Enviar Mensaje' })
-                            )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', value: 'Enviar Mensaje' })
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -53912,11 +53920,7 @@ var Messages = function (_Component) {
                                         'Correo'
                                     )
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    'unidosxmarianita@gmail.com'
-                                )
+                                'unidosxmarianita@gmail.com'
                             )
                         )
                     )
