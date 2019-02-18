@@ -16,4 +16,6 @@ require('./bootstrap');
 require('./components/Example');
 
 require('./components/messages/Messages');
+require('./components/alerts/ErrorAlert');
+require('./components/alerts/SuccessAlert');
 

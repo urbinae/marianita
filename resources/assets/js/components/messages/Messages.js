@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+
 import Success from '../alerts/SuccessAlert';
 import Errors from '../alerts/ErrorAlert';
 
@@ -12,7 +13,7 @@ export default class Messages extends Component {
             name: '',
             email: '',
             message: '',
-            alert_message: ''
+            alert_message: '',
         }
     }
     componentDidMount(){
@@ -30,10 +31,9 @@ export default class Messages extends Component {
         axios.post('/mensajes/', message)
              .then(resp => {
                 this.setState({alert_message: "success"});
-                console.info(resp);
+                console.info(resp.status);
              }).catch(error => {
                 this.setState({alert_message : "error"});
-                console.info(error);
              });
     }
 
@@ -49,9 +49,13 @@ export default class Messages extends Component {
         });
     }
 
-    render() {    	    	
+    render() { 
+        if (this.state.alert_message === 'success') <Success />
+        if (this.state.alert_message === 'error') <Errors /> 
+                
         return (
             <div>
+                {this.state.alert_message}
                 <div className="row">
                     <div className="col-8 col-12-small">
                         <form onSubmit={this.onSubmit}>
@@ -82,7 +86,7 @@ export default class Messages extends Component {
                                     </textarea>
                                 </div>
                             </div>
-                            <input type="submit" value="Enviar Mensaje" />
+                            <input type="submit" className="" value="Enviar Mensaje" />
                         </form>
                                 
                     </div>

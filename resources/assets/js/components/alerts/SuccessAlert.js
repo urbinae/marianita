@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class SuccessAlert extends Component {
 
@@ -6,14 +7,14 @@ export default class SuccessAlert extends Component {
       super();
 
       this.state = {
-        message:'Exito!'
+        message:'Mensaje enviado con éxito'
       }
     }
     render() {
         return (
            <div>
               <div className="alert alert-success" role="alert">
-                 {this.props.message}
+                 {this.state.message}
               </div>
            </div>
            );

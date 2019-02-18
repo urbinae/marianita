@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class ErrorAlert extends Component {
 
@@ -6,14 +7,14 @@ export default class ErrorAlert extends Component {
       super();
 
       this.state = {
-        message:'Error!'
+        message:'Error al enviar mensaje'
       }
     }
     render() {
         return (
            <div>
               <div className="alert alert-danger" role="alert">
-                 {this.props.message}
+                 {this.state.message}
               </div>
            </div>
            );
