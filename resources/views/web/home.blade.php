@@ -16,7 +16,7 @@
 
 	<!-- Two -->
 	<section id="two">
-		@if (session('success'))
+			@if (session('success'))
 			<div class="alert alert-success">
 				{{ session('success') }}
 			</div>
@@ -41,7 +41,7 @@
 	<!-- Three -->
 	<section id="three">
 		<h2>Contáctame</h2>
-        <p>Puedes escribirme un mensaje aquí abajo en las cajitas de texto.</p>
+        <p>Puedes escribirme un mensaje de texto.</p>
 		<div id="form"></div>
 	</section>
 </div>

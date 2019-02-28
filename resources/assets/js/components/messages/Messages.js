@@ -30,10 +30,10 @@ export default class Messages extends Component {
 
         axios.post('/mensajes/', message)
              .then(resp => {
-                this.setState({alert_message: "success"});
+                this.setState({alert_message: <Success />, name: '', email: '', message: ''});
                 console.info(resp.status);
              }).catch(error => {
-                this.setState({alert_message : "error"});
+                this.setState({alert_message : <Errors />});
              });
     }
 
@@ -50,9 +50,6 @@ export default class Messages extends Component {
     }
 
     render() { 
-        if (this.state.alert_message === 'success') <Success />
-        if (this.state.alert_message === 'error') <Errors /> 
-                
         return (
             <div>
                 {this.state.alert_message}
