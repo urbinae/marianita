@@ -14,9 +14,9 @@
 //Web Store
 
 Auth::routes();
-Route::get('/', 'viewController@index')->name('home');
-Route::get('/methods', 'viewController@methods')->name('methods');
-Route::get('/transfer', 'viewController@transfer')->name('transfer');
+Route::get('/', 'ViewController@index')->name('home');
+Route::get('/methods', 'ViewController@methods')->name('methods');
+Route::get('/transfer', 'ViewController@transfer')->name('transfer');
 
 Route::get('/admin', 'HomeController@index')->name('admin');
 
