@@ -13636,10 +13636,8 @@ new Vue({
                     this.alert_message = "Exito! Su mensaje fué enviado";
                     this.flag = true;
                     this.clase = 'alert alert-success';
-                    this.id = 'success-alert'
-                    $("#"+this.id).fadeTo(2000, 500).slideUp(500, function () {
-                        $("#"+this.id).remove();
-                    });
+                    this.id = 'success-alert';
+                   
                     this.name='';
                     this.email='';
                     this.message='';
@@ -13649,9 +13647,7 @@ new Vue({
                     this.clase = 'alert alert-danger';
                     this.id = 'danger-alert'
                     console.log(error);
-                    $("#"+this.id).fadeTo(2000, 500).slideUp(500, function () {
-                        $("#"+this.id).alert('close');
-                    });
+                    
                 });
             
         }
@@ -13662,6 +13658,7 @@ new Vue({
         <div v-if="flag" :class="clase" :id="id" role="alert">
             <strong>{{alert_message}}! </strong>
         </div>
+            <form method = "post" name="addpost" id="addpost" action="#" enctype="multipart/form-data" @submit.prevent="onSubmit">
                 <div class="row gtr-uniform gtr-50">
                     <div class="col-6 col-12-xsmall">
                         <input type="text"
@@ -13684,8 +13681,9 @@ new Vue({
                         </textarea>
                     </div>
                 </div>
-                <input type="submit" class="" value="Enviar Mensaje" @click="onSubmit" />
-        </div>
+                <input type="submit" class="" value="Enviar Mensaje"/>
+                <button class="btn btn-success">Submit</button>
+            </form>
     </div>
 `,
 }).$mount('#form');

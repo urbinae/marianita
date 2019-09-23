@@ -43,7 +43,6 @@ class MessageController extends Controller
         $message->message = $request->input('message');
         
         if($message->save()){  
-            return $message->id;
             if ($message->id) {
                 return $message;
             }
