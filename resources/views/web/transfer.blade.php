@@ -6,7 +6,7 @@ transfer
 	<!-- One -->
 	<section id="one">
 		<header class="major">
-			<h2>Números de cuenta a los que puedes transferir desde cualquier parte del mundo<br />
+			<h2>Números de cuenta a los que puedes transferir.<br />
 			</header>
 			<p>Puedes ayudarme a través de una transferencia bancaria.</p>
 			<h5><a href="{{ route('home') }}" class="button">Volver</a></h5>
@@ -16,7 +16,7 @@ transfer
 		<section id="two">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<div class="panel-title">Banesco</div>
+					<div class="panel-title">Banesco, Venezuela</div>
 				</div>
 				<div class="panel-body">
 					Número: <br>
@@ -26,7 +26,7 @@ transfer
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<div class="panel-title">Sofitasa</div>
+					<div class="panel-title">Sofitasa, Venezuela</div>
 				</div>
 				<div class="panel-body">
 					Número: <br>
@@ -36,7 +36,7 @@ transfer
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<div class="panel-title">Venezuela</div>
+					<div class="panel-title">Venezuela, Venezuela</div>
 				</div>
 				<div class="panel-body">
 					Número: <br>
