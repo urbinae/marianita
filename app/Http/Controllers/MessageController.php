@@ -43,7 +43,9 @@ class MessageController extends Controller
         $message->message = $request->input('message');
         
         if($message->save()){  
-            return $message;
+            if ($message->id) {
+                return $message;
+            }
         }
         return null;
     }
