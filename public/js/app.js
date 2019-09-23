@@ -13630,7 +13630,7 @@ new Vue({
                 message: this.message,
             }
             console.log(message);
-            axios.post('/addmessage/', message)
+            axios.post('/mensajes/', message)
                 .then(resp => {
                     console.info(resp);
                     this.alert_message = "Exito! Su mensaje fué enviado";

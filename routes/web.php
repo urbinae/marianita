@@ -27,8 +27,8 @@ Route::middleware(['auth'])->group(function (){
 });
 
 //Mensajes
-//Route::resource('mensajes', 'MessageController');
-Route::post('/addmessage', 'MessageController@store');
+Route::resource('mensajes', 'MessageController');
+//Route::post('/mensajes/create', 'MessageController@store')->name('addmessaje');
 //Mensajes
 Route::get('listamensajes', 'MessageController@lista');
 
