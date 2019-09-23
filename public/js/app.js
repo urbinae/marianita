@@ -13630,7 +13630,7 @@ new Vue({
                 message: this.message,
             }
             console.log(message);
-            axios.post('/mensajes/', message)
+            axios.post('/addmessage/', message)
                 .then(resp => {
                     console.info(resp);
                     this.alert_message = "Exito! Su mensaje fué enviado";
@@ -13638,7 +13638,7 @@ new Vue({
                     this.clase = 'alert alert-success';
                     this.id = 'success-alert'
                     $("#"+this.id).fadeTo(2000, 500).slideUp(500, function () {
-                        $("#"+this.id).alert('close');
+                        $("#"+this.id).remove();
                     });
                     this.name='';
                     this.email='';
