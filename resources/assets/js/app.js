@@ -17,32 +17,27 @@ new Vue({
                 email: this.email,
                 message: this.message,
             }
-            let headers = {
-                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
-                'Access-Control-Allow-Headers': 'X-Custom-Header, X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-security-token, X-XSRF-TOKEN, X-CSRF-TOKEN'
-            };
-
             console.log(message);
-            axios.post('/mensajes/', message, headers)
+            axios.post('/mensajes/', message)
                 .then(resp => {
                     console.info(resp);
                     this.alert_message = "Exito! Su mensaje fué enviado";
                     this.flag = true;
                     this.clase = 'alert alert-success';
                     this.id = 'success-alert';
-
-                    this.name = '';
-                    this.email = '';
-                    this.message = '';
+                   
+                    this.name='';
+                    this.email='';
+                    this.message='';
                 }).catch(error => {
                     this.alert_message = "Error! Su mensaje no fué enviado";
                     this.flag = true;
                     this.clase = 'alert alert-danger';
                     this.id = 'danger-alert'
                     console.log(error);
-
+                    
                 });
-
+            
         }
     },
 
