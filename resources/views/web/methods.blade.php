@@ -16,9 +16,9 @@
 	<!-- Two -->
 	<section id="two">
 			<div class="row">
-				<!--<article class="col-4 col-12-xsmall">
+				<article class="col-4 col-12-xsmall">
 					<a href="/donation" class="image fit thumb"><img src="images/paypal_logo.png" alt="" /></a>
-				</article>-->
+				</article>
 				<article class="col-4 col-12-xsmall">
 					<a href="/transfer" class="image fit thumb"><img src="images/transferencia.png" alt="" /></a>
 				</article>

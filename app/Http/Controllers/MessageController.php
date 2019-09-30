@@ -41,8 +41,8 @@ class MessageController extends Controller
         $message->name = $request->input('name');
         $message->email = $request->input('email');
         $message->message = $request->input('message');
-        
-        if($message->save()){  
+
+        if ($message->save()) {
             if ($message->id) {
                 return $message;
             }
@@ -62,8 +62,8 @@ class MessageController extends Controller
         $message->name = $request->input('name');
         $message->email = $request->input('email');
         $message->message = $request->input('message');
-        
-        if($message->save()){  
+
+        if ($message->save()) {
             if ($message->id) {
                 return $message;
             }
@@ -114,5 +114,11 @@ class MessageController extends Controller
     public function destroy(Message $message)
     {
         //
+    }
+
+    public function lista()
+    {
+        $mensajes = Message::paginate();
+        return view('mensajes.index', compact('mensajes'));
     }
 }

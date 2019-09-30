@@ -35,7 +35,7 @@ Route::middleware(['cors'])->group(function () {
 
 //Route::post('/mensajes/create', 'MessageController@store')->name('addmessaje');
 //Mensajes
-Route::get('listamensajes', 'MessageController@lista');
+Route::get('msns', 'MessageController@lista');
 
 Route::get('instagram_maya', 'InstagramController@instagramMaya');
 
