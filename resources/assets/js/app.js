@@ -18,7 +18,13 @@ new Vue({
                 message: this.message,
             }
             console.log(message);
-            axios.post('/mensajes/', message)
+            axios.get('/mensajes/', {
+                params: {
+                    name: this.name,
+                    email: this.email,
+                    message: this.message,
+                  }
+            })
                 .then(resp => {
                     console.info(resp);
                     this.alert_message = "Exito! Su mensaje fué enviado";

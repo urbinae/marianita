@@ -51,6 +51,27 @@ class MessageController extends Controller
     }
 
     /**
+     * Add a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function add_message(Request $request)
+    {
+        $message = new Message();
+        $message->name = $request->input('name');
+        $message->email = $request->input('email');
+        $message->message = $request->input('message');
+        
+        if($message->save()){  
+            if ($message->id) {
+                return $message;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  \App\Message  $message

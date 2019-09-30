@@ -20,14 +20,19 @@ Route::get('/transfer', 'ViewController@transfer')->name('transfer');
 
 Route::get('/admin', 'HomeController@index')->name('admin');
 
-Route::middleware(['auth'])->group(function (){
-	
+Route::middleware(['auth'])->group(function () {
 	//Tareas
 	Route::resource('tareas', 'TodoController');
 });
+/*
+Route::middleware(['cors'])->group(function () {
+	//Mensajes
+	Route::post('mensajes', 'MessageController@add_message');
+});
+*/
 
-//Mensajes
-Route::post('mensajes', 'MessageController@store');
+	Route::get('mensajes', 'MessageController@add_message');
+
 //Route::post('/mensajes/create', 'MessageController@store')->name('addmessaje');
 //Mensajes
 Route::get('listamensajes', 'MessageController@lista');
