@@ -8,7 +8,7 @@
 		<header class="major">
 			<h2>Modos de pago que puedes usar para ayudarme<br />
 			</header>
-			<p>Puedes ayudarme a través transferencia bancaria, Paypal o AirTM</p>
+			<p>Puedes ayudarme a través de: Transferencia Bancaria, Paypal o AirTM</p>
 		<h5><a href="{{ URL::previous() }}" class="btn btn-default">Volver</a></h5>
 			
 	</section>

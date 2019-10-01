@@ -8,9 +8,24 @@
 		<header class="major">
 			<h2>Bienvenidos a Mi Sitio Web<br />
 		</header>
-		<p>Aquí podrás entrar cuando quieras. Siempre serás bienvenido. <br>
+		<p>Aquí podrás entrar en cualquier momento. Siempre serás bienvenido. <br>
 			Podrás ver algunas de mis fotos. También puedes escribirme que yo te responderé</p>
+		<hr>
+		<!--<h5><a href="/methods" class="btn btn-info">Apóyame</a></h5></h1>-->
 
+		<p>Puedes ayudarme a través de: Transferencia Bancaria, Paypal o AirTM</p>
+		<div class="row">
+			<article class="col-4 col-12-xsmall">
+			<button type="button" class="image fit thumb" data-toggle="modal" data-target="#paypalmmodal"><img src="images/paypal.png" alt="" /></button>
+			</article>
+			<article class="col-4 col-12-xsmall">
+				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#bancosmmodal"><img src="images/transferencia.png" alt="" /></button>
+			</article>
+			<article class="col-4 col-12-xsmall">
+				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#airtmmodal"><img src="images/airtm.png" alt="" /></button>
+			</article>
+			@include('web.partials.modalshome')
+		</div>
 	</section>
 
 	<!-- Two -->
