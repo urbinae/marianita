@@ -19,7 +19,7 @@ transfer
 					<div class="panel-title">SOFITASA, Venezuela</div>
 				</div>
 				<div class="panel-body">
-					Número: 0137-0001-0400-5502<br>
+					Número: 0137-0001-0400-0590-5502<br>
 					A nombre de: FRAMM URBINA, (PADRE)<br>
 					C.I: 15.433.313<br>
 					Telf: +58 (416) 771 7227
@@ -30,7 +30,7 @@ transfer
 					<div class="panel-title">BICENTENARIO, Venezuela</div>
 				</div>
 				<div class="panel-body">
-					Número: 0175-0038-4600-7067<br>
+					Número: 0175-0038-4600-7067-2214<br>
 					A nombre de: LILIBETH ROMERO, (MADRE)<br>
 					C.I: 16.125.986<BR>
 					Telf: +58 (416) 175 1973
@@ -41,7 +41,7 @@ transfer
 					<div class="panel-title">BANESCO, Venezuela</div>
 				</div>
 				<div class="panel-body">
-					Número: <br>
+					Número: 0134-0030-0003-0102-9052<br>
 					A nombre de: EIMAR URBINA, (TIO)<br>
 					C.I: 16.787.704<br>
 					Telf: +58 (424) 784 0269

@@ -51,7 +51,7 @@
 					<div class="panel-title">BANESCO, Venezuela</div>
 				</div>
 				<div class="panel-body">
-					Número: <br>
+					Número: 01340030000301029052<br>
 					A nombre de: EIMAR URBINA, (TIO)<br>
 					C.I: 16.787.704<br>
 					Telf: +58 (424) 784 0269
