@@ -17,6 +17,7 @@ class ViewController extends Controller
         $instagram = new Instagram('8774113183.1677ed0.c4cdb1e0be724bceb0d36c6476932e95');
         $user = $instagram->getUser();
         $response = $instagram->getImages();//obtener las 4 primeras imagenes
+        $response = array_slice($response, 0, 6);
         //dd($response);
         return view('web.home', compact('response','user'));
     }

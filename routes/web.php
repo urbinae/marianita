@@ -42,10 +42,7 @@ Route::get('instagram_maya', 'InstagramController@instagramMaya');
 // Paypal
 
 // Enviamos nuestro pedido a PayPal
-Route::get('donation', array(
-	'as' => 'donation',
-	'uses' => 'PayController@postDonation',
-));
+Route::post('donation','PayController@postDonation');
 
 // Después de realizar el pago Paypal redirecciona a esta ruta
 Route::get('donation/status', array(

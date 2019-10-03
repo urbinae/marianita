@@ -36,8 +36,9 @@ class PayController extends Controller
 
 	/* Envía la donación
 		Redirecciona al usuario a la pagina de paypal*/
-	public function postDonation()
+	public function postDonation(Request $request)
 	{
+		dd($request);
 		$payer = new Payer();
 		$payer->setPaymentMethod('paypal');
 
@@ -171,7 +172,7 @@ class PayController extends Controller
 			//$this->saveMessage(new Message(...));
 
 			return \Redirect::route('home')
-				->with('success', 'Gracias por su donación');
+				->with('success', 'Gracias por tu donación');
 		}
 		return \Redirect::route('home')
 			->with('error', 'No se pudo realizar la donación');

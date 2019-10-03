@@ -16,7 +16,7 @@
 		<p>Puedes ayudarme a través de: Transferencia Bancaria, Paypal o AirTM</p>
 		<div class="row">
 			<article class="col-4 col-12-xsmall">
-			<button type="button" class="image fit thumb" data-toggle="modal" data-target="#paypalmmodal"><img src="images/paypal.png" alt="" /></button>
+			<button type="button" class="image fit thumb" data-toggle="modal" data-target="#paypalmodal"><img src="images/paypal.png" alt="" /></button>
 			</article>
 			<article class="col-4 col-12-xsmall">
 				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#bancosmmodal"><img src="images/transferencia.png" alt="" /></button>
