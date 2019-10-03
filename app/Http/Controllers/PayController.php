@@ -38,7 +38,7 @@ class PayController extends Controller
 		Redirecciona al usuario a la pagina de paypal*/
 	public function postDonation(Request $request)
 	{
-		dd($request);
+		//dd($request);
 		$payer = new Payer();
 		$payer->setPaymentMethod('paypal');
 
@@ -46,7 +46,7 @@ class PayController extends Controller
 		$items = array();
 		$subtotal = 0;
 		//$cart = \Session::get('cart');
-		$cant = 5;
+		$cant = $request->input('monto');
 		$currency = 'USD';
 
 		$item = new Item();
@@ -78,7 +78,7 @@ class PayController extends Controller
 		$transaction = new Transaction();
 		$transaction->setAmount($amount)
 			->setItemList($item_list)
-			->setDescription('Colaboración de prueba para Marianita');
+			->setDescription('donación de '.$request->input('nombre').' para Marianita');
 //dd($transaction);
 
 		$redirect_urls = new RedirectUrls();

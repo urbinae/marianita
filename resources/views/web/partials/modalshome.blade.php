@@ -8,19 +8,21 @@
 			</div>
 			<div class="modal-body">
 				<p>unidosxmarianita@gmail.com</p>
-				<form action="/donation">
-				{{ csrf_field() }}
+				{!! Form::open(array('route' => 'donation','method'=>'POST')) !!}
+				
 					<div class="form-group">
-						<input type="monto" class="form-control" id="monto" placeholder="Monto">
+						{!!Form::text('monto',null,['id'=>'monto', 'class'=>'form-control', 'placeholder'=>'Monto', 'required'=>'required'])!!}
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="monto" placeholder="Nombre">
+						{!!Form::text('nombre',null,['id'=>'nombre', 'class'=>'form-control', 'placeholder'=>'Nombre', 'required'=>'required'])!!}
 					</div>
 					<div class="form-group">
-						<input type="email" class="form-control" id="email" placeholder="Correo">
+					{!!Form::email('email',null,['id'=>'email', 'class'=>'form-control', 'placeholder'=>'Correo', 'required'=>'required'])!!}
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+					<div class="form-group">
+                            {{ Form::submit('Donar', ['class' => 'btn btn-primary'])}}
+                    </div>
+				{!! Form::close()!!}
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
