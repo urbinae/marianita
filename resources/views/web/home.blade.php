@@ -8,28 +8,6 @@
 		<header class="major">
 			<h2>Bienvenidos a Mi Sitio Web<br />
 		</header>
-		<p>Aquí podrás entrar en cualquier momento. Siempre serás bienvenido. <br>
-			Podrás ver algunas de mis fotos. También puedes escribirme que yo te responderé</p>
-		<hr>
-		<!--<h5><a href="/methods" class="btn btn-info">Apóyame</a></h5></h1>-->
-
-		<p>Puedes ayudarme a través de: Transferencia Bancaria, Paypal o AirTM</p>
-		<div class="row">
-			<article class="col-4 col-12-xsmall">
-			<button type="button" class="image fit thumb" data-toggle="modal" data-target="#paypalmodal"><img src="images/paypal.png" alt="" /></button>
-			</article>
-			<article class="col-4 col-12-xsmall">
-				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#bancosmmodal"><img src="images/transferencia.png" alt="" /></button>
-			</article>
-			<article class="col-4 col-12-xsmall">
-				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#airtmmodal"><img src="images/airtm.png" alt="" /></button>
-			</article>
-			@include('web.partials.modalshome')
-		</div>
-	</section>
-
-	<!-- Two -->
-	<section id="two">
 		@if (session('success'))
 		<div class="alert alert-success">
 			{{ session('success') }}
@@ -40,7 +18,11 @@
 			{{ session('error') }}
 		</div>
 		@endif
-		<h2>Fotos recientes</h2>
+		
+		<p>Aquí podrás entrar en cualquier momento. Siempre serás bienvenido. <br>
+			Podrás ver algunas de mis fotos. También puedes escribirme que yo te responderé</p>
+		<hr>
+		<h2>Fotos</h2>
 		<div class="row">
 			@foreach($response as $item)
 			<article class="col-4 col-12-xsmall work-item">
@@ -48,9 +30,29 @@
 			</article>
 			@endforeach
 		</div>
-		<!--<ul class="actions">
-							<li><a href="#" class="button">Ver Todas</a></li>
-						</ul>-->
+		
+	</section>
+
+	<!-- Two -->
+	<section id="two">
+		
+		<!--<h5><a href="/methods" class="btn btn-info">Apóyame</a></h5></h1>-->
+        <h2>Gracias por tu ayuda!</h2>
+		<p>Puedes apoyarme economicamente a través de: Transferencia Bancaria, Paypal o AirTM
+		</p>
+		<p>Me escribes! </p>
+		<div class="row">
+			<article class="col-4 col-12-xsmall">
+			<button type="button" class="image fit thumb" data-toggle="modal" data-target="#paypalmmodal"><img src="images/paypal.png" alt="" /></button>
+			</article>
+			<article class="col-4 col-12-xsmall">
+				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#bancosmmodal"><img src="images/transferencia.png" alt="" /></button>
+			</article>
+			<article class="col-4 col-12-xsmall">
+				<button type="button" class="image fit thumb" data-toggle="modal" data-target="#airtmmodal"><img src="images/airtm.png" alt="" /></button>
+			</article>
+			@include('web.partials.modalshome')
+		</div>
 	</section>
 	<!-- Three -->
 	<section id="three">

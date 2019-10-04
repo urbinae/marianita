@@ -38,14 +38,12 @@ class PayController extends Controller
 		Redirecciona al usuario a la pagina de paypal*/
 	public function postDonation(Request $request)
 	{
-		//dd($request);
 		$payer = new Payer();
 		$payer->setPaymentMethod('paypal');
 
 		//lista de elementos a enviar
 		$items = array();
 		$subtotal = 0;
-		//$cart = \Session::get('cart');
 		$cant = $request->input('monto');
 		$currency = 'USD';
 
@@ -61,12 +59,9 @@ class PayController extends Controller
 		$item_list = new ItemList();
 		$item_list->setItems($items);
 
-//		dd($item_list);
-
 		$details = new Details();
 		$details->setSubtotal($cant);
 
-		//dd($details);
 		$total = $cant;
 
 		$amount = new Amount();
@@ -74,26 +69,21 @@ class PayController extends Controller
 			->setTotal($total)
 			->setDetails($details);
 
-//dd($amount);
 		$transaction = new Transaction();
 		$transaction->setAmount($amount)
 			->setItemList($item_list)
 			->setDescription('donación de '.$request->input('nombre').' para Marianita');
-//dd($transaction);
 
 		$redirect_urls = new RedirectUrls();
 		$redirect_urls
 			->setReturnUrl(\URL::route('donation.status'))
 			->setCancelUrl(\URL::route('donation.status'));
-//dd($redirect_urls);
 
 		$payment = new Payment();
 		$payment->setIntent('Sale')
 			->setPayer($payer)
 			->setRedirectUrls($redirect_urls)
 			->setTransactions(array($transaction));
-
-		//dd($payment);
 
 		try {
 			$payment->create($this->_api_context);
@@ -133,7 +123,7 @@ class PayController extends Controller
 	public function getDonationStatus()
 	{
 		// Get the payment ID before session clear
-		$payment_id = \Session::get('paypal_payment_id');
+		$payment_id = \Session::get('paypal_payment_id'); //bd
 
 //dd($payment_id);
 		// clear the session payment ID
@@ -150,7 +140,21 @@ class PayController extends Controller
 		}
 
 		$payment = Payment::get($payment_id, $this->_api_context);
-//($payment);
+		$donante = new Donante();
+		//dd($payment->create_time); //BD
+		//dd($payment);
+		//dd($payment->payer);
+		//dd($payment->payer->status);//Vefified
+		dd($payment->payer->payer_info);
+		dd($payment->payer->payer_info->email);
+		dd($payment->payer->payer_info->first_name);
+		dd($payment->payer->payer_info->last_name);
+		dd($payment->payer->payer_info->payer_id);
+		dd($payment->payer->payer_info->city);
+		dd($payment->payer->payer_info->state);
+		dd($payment->payer->payer_info)->postal_code;
+		dd($payment->payer->payer_info)->country_code;
+
 		// PaymentExecution object includes information necessary 
 		// to execute a PayPal account payment. 
 		// The payer_id is added to the request query parameters
